@@ -10,26 +10,6 @@
         --type-size-h1: 64px;
 }
 
-@media (max-width: 768px) {
-    :root {
-        /*Tablet*/
-            --type-size-p2: 21px;
-            --type-size-h2: 27px;
-            --type-size-p1: 27px;
-            --type-size-h1: 52px;
-    }
-}
-
-@media (max-width: 480px) {
-    :root {
-        /* Mobile */
-        --type-size-p2: 18px;
-        --type-size-h2: 22px;
-        --type-size-p1: 22px;
-        --type-size-h1: 40px;
-    }
-}
-
 h1{
     font-size: var(--type-size-h1);
 }
@@ -65,3 +45,87 @@ p{
     height: 95.5px;
     flex-shrink: 0;
 }
+
+/*Backgorund Hogwarts*/
+body {
+    background-image: url(img/hogwarts.jpeg);
+    background-size: cover;
+    background-position: 35% top;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    overflow-x: hidden
+    
+}
+
+/*HEADER STYLING*/
+
+header {
+    position: relative;
+  }
+
+.hat{
+    height:100px;
+    width: 90px;
+    position: absolute;
+    right: 100px;
+    top: 10px;
+}
+
+
+
+
+
+
+/*MEDIA QUERIES---> Bitte möglichst unten lassen, so überschreiben wir sie nicht ausversehen!*/
+
+@media (max-width: 768px) {
+    :root {
+        /*Tablet*/
+            --type-size-p2: 21px;
+            --type-size-h2: 27px;
+            --type-size-p1: 27px;
+            --type-size-h1: 52px;
+    }
+
+    .hat {
+        height: 80px;
+        width: 72px;
+        right: 60px;
+        top: 8px;
+    }
+
+    body {
+        background-image: url(img/hogwarts.jpeg);
+        background-position: center top;
+        background-size: cover;
+    }
+
+
+
+}
+
+@media (max-width: 480px) {
+    :root {
+        /* Mobile */
+        --type-size-p2: 18px;
+        --type-size-h2: 22px;
+        --type-size-p1: 22px;
+        --type-size-h1: 40px;
+    }
+
+    .hat {
+    height: 60px;
+    width: 54px;
+    right: 35px;
+    top: 6px;
+    }
+
+    body {
+        background-image: url(img/hogwarts.jpeg);
+        background-position: 47% top;
+        background-size: cover;
+    }
+
+
+}
+
