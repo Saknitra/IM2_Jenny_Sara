@@ -58,3 +58,10 @@ p{
     /*Weiss*/
     --color-text: #ffffff; 
 }
+
+/*Button_default_desktop Styling*/
+.button_default_gross {
+    width: 473px;
+    height: 95.5px;
+    flex-shrink: 0;
+}
