@@ -1,0 +1,60 @@
+/* Object-Fit & Object-Position with Breakpoints */
+
+/* CSS-Variablen für Responsive Schriften */
+
+:root{
+        /* Desktop */
+        --type-size-p2: 24px;
+        --type-size-h2: 32px;
+        --type-size-p1: 32px;
+        --type-size-h1: 64px;
+}
+
+@media (max-width: 768px) {
+    :root {
+        /*Tablet*/
+            --type-size-p2: 21px;
+            --type-size-h2: 27px;
+            --type-size-p1: 27px;
+            --type-size-h1: 52px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        /* Mobile */
+        --type-size-p2: 18px;
+        --type-size-h2: 22px;
+        --type-size-p1: 22px;
+        --type-size-h1: 40px;
+    }
+}
+
+h1{
+    font-size: var(--type-size-h1);
+}
+
+h2{
+    font-size: var(--type-size-h2);
+}
+
+h3{ /*ist eigentlich Schrift p1, aber geht nicht in css*/
+    font-size: var(--type-size-p1);
+}
+
+p{
+    font-size: var(--type-size-p2);
+}
+
+/*colors, die wir haben/brauchen*/
+
+:root{
+    /*Dunkelbraun*/
+    --color-primary: #634832;
+
+    /*Hellbraun*/
+    --color-secondary: #E4D2C0; 
+
+    /*Weiss*/
+    --color-text: #ffffff; 
+}
