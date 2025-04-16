@@ -96,8 +96,9 @@ header {
 
     body {
         background-image: url(img/hogwarts.jpeg);
-        background-position: center top;
-        background-size: cover;
+        background-position: right top;
+        background-size: 110vh;
+        min-height: 100vh;
     }
 
 
@@ -122,8 +123,9 @@ header {
 
     body {
         background-image: url(img/hogwarts.jpeg);
-        background-position: 47% top;
-        background-size: cover;
+        background-position: right top;
+        background-size: 130vh;
+        min-height: 100vh;
     }
 
 
