@@ -53,7 +53,9 @@ body {
     background-position: 35% top;
     background-repeat: no-repeat;
     min-height: 100vh;
-    overflow-x: hidden
+    overflow: hidden;
+    margin: 0;
+    padding: 0; 
     
 }
 
@@ -71,12 +73,17 @@ header {
     top: 10px;
 }
 
-
-
-
-
-
 /*MEDIA QUERIES---> Bitte möglichst unten lassen, so überschreiben wir sie nicht ausversehen!*/
+
+@media (min-width: 480px) and (max-width: 768px) {
+    body {
+        /* Hochkant Tablet */
+        background-position: 44% -30px;   
+        background-size: 115%;            
+        background-repeat: no-repeat;
+        background-image: url(img/hogwarts.jpeg);
+    }
+}
 
 @media (max-width: 768px) {
     :root {
@@ -96,9 +103,11 @@ header {
 
     body {
         background-image: url(img/hogwarts.jpeg);
-        background-position: right top;
-        background-size: 110vh;
-        min-height: 100vh;
+        background-position: center -30px;     
+        background-size: cover;               
+        background-repeat: no-repeat;
+        min-height: 105vh;
+        overflow: hidden;
     }
 
 
@@ -123,11 +132,13 @@ header {
 
     body {
         background-image: url(img/hogwarts.jpeg);
-        background-position: right top;
-        background-size: 130vh;
-        min-height: 100vh;
+        background-position: 50% -30px;   
+        background-repeat: no-repeat;
+        min-height: 130vh;
+        overflow: hidden;
+    }     
+
+    
     }
 
-
-}
 
