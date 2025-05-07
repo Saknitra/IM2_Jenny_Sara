@@ -100,24 +100,15 @@ p{ /*ist Schrift p2 in Figma*/
     flex-shrink: 0;
 }
 
-
 /*Karte im Hintergrund für Spells, für Desktopgrösse und Tabletgrösse*/
 #cardForSpells {
-    background-image: url(img/card.jpg);
+    background-image: url(img/card.png);
+    background-color: transparent;
+    background-size: contain;
     width: 664px;
     height: 436px;
     flex-shrink: 0;
     aspect-ratio: 166/109;
-}
-
-/*Karte im Hintergrund für Spells, Mobile Version*/
-#cardForSpellsMobile {
-    background-image: url(img/card.jpg);
-    width: 418px;
-    height: 275px;
-    transform: rotate(90deg);
-    flex-shrink: 0;
-    aspect-ratio: 38/25;
 }
 
 /*Backgorund Hogwarts*/
@@ -136,7 +127,9 @@ body {
 /*HEADER STYLING*/
 
 header {
-    position: relative;
+    position: fixed;
+    height: 242px;
+    width: 100%;
 
     /*Fade in Header*/
     opacity: 0;
@@ -154,6 +147,10 @@ header.fade {
     position: absolute;
     right: 100px;
     top: 10px;
+}
+
+main {
+    padding-top: 242px;
 }
 
 /*Fade in Text/Button*/
@@ -233,5 +230,33 @@ header.fade {
         background-repeat: no-repeat;
         min-height: 130vh;
         overflow: hidden;
-    }     
+    } 
+    
+    /*Button default für mobile Styling*/
+    #APIButtonMobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='473' height='96' viewBox='0 0 473 96'><path d='M87 0L0 48.5L87 95.5H384.5L473 48.5L384.5 0H87Z' fill='%23634832'/></svg>");
+        background-repeat: no-repeat;
+        background-size: contain;      
+        background-position: center;
+        background-color: transparent;
+        border: none;
+        width: 302px;
+        height: 53px;
+        flex-shrink: 0;
     }
+    
+    /*Karte im Hintergrund für Spells, Mobile Version*/
+    #cardForSpells {
+        background-image: url(img/card.png);
+        background-color: transparent;
+        background-size: contain;
+        width: 418px;
+        height: 275px;
+        transform: rotate(90deg);
+        flex-shrink: 0;
+        aspect-ratio: 38/25;
+    }
+}
