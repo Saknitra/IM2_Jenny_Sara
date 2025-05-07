@@ -73,8 +73,7 @@ p{ /*ist Schrift p2 in Figma*/
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='473' height='96' viewBox='0 0 473 96' fill='none'><path d='M87 0L0 48.5L87 95.5H384.5L473 48.5L384.5 0H87Z' fill='%23634832'/></svg>");
     background-repeat: no-repeat;
     background-size: contain;      
-    background-size: contain;
-    background-position: center;
+    background-position: center, center;
     width: 473px;
     height: 95.5px;
     flex-shrink: 0;
