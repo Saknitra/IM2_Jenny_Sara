@@ -14,9 +14,9 @@ h1{
     font-size: var(--type-size-h1);
     color: #E4D2C0;
     text-align: center;
-    -webkit-text-stroke-width: 1px;
+    margin-bottom: 0;
+    -webkit-text-stroke-width: 1.5px;
     -webkit-text-stroke-color: #634832;
-    font-family: "Henny Penny";
     font-family: 'Henny Penny';
     font-style: normal;
     font-weight: 400;
@@ -26,8 +26,8 @@ h1{
 h2{
     font-size: var(--type-size-h2);
     color: #FFF;
-    font-family: "Henny Penny";
     text-align: center;
+    margin-top: 0;
     font-family: 'Henny Penny';
     font-style: normal;
     font-weight: 400;
@@ -38,7 +38,6 @@ h3{ /*ist eigentlich Schrift p1, aber geht nicht in css*/
     font-size: var(--type-size-p1);
     color: #FFF;
     text-align: center;
-    font-family: Cormorant;
     font-family: 'Cormorant';
     font-style: normal;
     font-weight: 400;
@@ -48,11 +47,18 @@ h3{ /*ist eigentlich Schrift p1, aber geht nicht in css*/
 p{ /*ist Schrift p2 in Figma*/
     font-size: var(--type-size-p2);
     color: #fff;
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
     text-align: center;
     font-family: 'Cormorant';
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+.TextIntroFull {
+    margin-bottom: 100px;
 }
 
 /*colors, die wir haben/brauchen*/
@@ -84,20 +90,14 @@ p{ /*ist Schrift p2 in Figma*/
     flex-shrink: 0;
 }
 
-/*Button default für mobile Styling*/
-#APIButtonMobile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='473' height='96' viewBox='0 0 473 96'><path d='M87 0L0 48.5L87 95.5H384.5L473 48.5L384.5 0H87Z' fill='%23634832'/></svg>");
-    background-repeat: no-repeat;
-    background-size: contain;      
-    background-position: center;
-    background-color: transparent;
-    border: none;
-    width: 302px;
-    height: 53px;
-    flex-shrink: 0;
+.TextInButton {
+    font-size: var(--type-size-h2);
+    color: #FFF;
+    text-align: center;
+    font-family: 'Henny Penny';
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 /*Karte im Hintergrund für Spells, für Desktopgrösse und Tabletgrösse*/
@@ -115,10 +115,10 @@ p{ /*ist Schrift p2 in Figma*/
 body {
     background-image: url(img/hogwarts.jpeg);
     background-size: cover;
-    background-position: 35% top;
+    background-position: 58% top;
     background-repeat: no-repeat;
     min-height: 100vh;
-    overflow: hidden;
+    overflow: normal;
     margin: 0;
     padding: 0; 
     
@@ -128,7 +128,7 @@ body {
 
 header {
     position: fixed;
-    height: 242px;
+    height: 160px;
     width: 100%;
 
     /*Fade in Header*/
@@ -150,7 +150,10 @@ header.fade {
 }
 
 main {
-    padding-top: 242px;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*Fade in Text/Button*/
@@ -204,7 +207,7 @@ main {
         background-size: cover;               
         background-repeat: no-repeat;
         min-height: 105vh;
-        overflow: hidden;
+        overflow: normal;
     }
 }
 
@@ -218,10 +221,10 @@ main {
     }
 
     .hat {
-    height: 60px;
-    width: 54px;
-    right: 35px;
-    top: 6px;
+        height: 60px;
+        width: 54px;
+        right: 35px;
+        top: 6px;
     }
 
     body {
@@ -229,11 +232,18 @@ main {
         background-position: 50% -30px;   
         background-repeat: no-repeat;
         min-height: 130vh;
-        overflow: hidden;
+        overflow: normal;
     } 
+
+    main {
+        padding-top: 202px;
+        padding-left: 23px;
+        padding-right: 23px;
+        padding-bottom: 600px;
+    }
     
     /*Button default für mobile Styling*/
-    #APIButtonMobile {
+    #APIButton {
         display: flex;
         justify-content: center;
         align-items: center;
