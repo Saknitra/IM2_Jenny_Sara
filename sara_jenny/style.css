@@ -82,7 +82,14 @@ p{ /*ist Schrift p2 in Figma*/
     flex-shrink: 0;
 }
 
-/*Karte im Hintergrund
+/*Karte im Hintergrund*/
+.cardForSpells {
+    background-image: url(img/card.jpg);
+    width: 664px;
+    height: 436px;
+    flex-shrink: 0;
+    aspect-ratio: 166/109;
+}
 
 /*Backgorund Hogwarts*/
 body {
