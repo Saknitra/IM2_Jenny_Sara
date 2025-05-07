@@ -1,6 +1,6 @@
 console.log("hi Javascript!")
 
-/*API Abrufen*/
+/*API Abrufen
 const container = document.querySelector("#spell-container");
 
 const API_URL = 'https://hp-api.onrender.com/api/spells';
@@ -31,7 +31,14 @@ function showData() {
 }
 
 showData ();
+*/
 
 
 
-//Startseite und Einblenden des Bodys//
+//Startseite Fadein Header und Container (Article)//
+window.addEventListener("DOMContentLoaded", function () {
+    document.querySelector("header").classList.add("fade");
+    document.querySelector(".container").classList.add("fade");   
+});
+
+

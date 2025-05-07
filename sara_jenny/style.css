@@ -111,8 +111,7 @@ header {
 
     /*Fade in Header*/
     opacity: 0;
-    transition-property: opacity;
-    transition-duration: 1.2s;
+    transition: opacity 1.2s ease-in;
 }
 
 header.fade {
@@ -130,8 +129,7 @@ header.fade {
 /*Fade in Text/Button*/
 .container {
     opacity: 0;
-    transition-property: opacity;
-    transition-duration: 1.2s;
+    transition: opacity 1.2s ease-in;
 
 }
 
