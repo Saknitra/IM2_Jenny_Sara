@@ -12,17 +12,36 @@
 
 h1{
     font-size: var(--type-size-h1);
+    color: #E4D2C0;
+    text-align: center;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #634832;
+    font-family: "Henny Penny";
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 h2{
     font-size: var(--type-size-h2);
+    color: #FFF;
+    font-family: "Henny Penny";
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 h3{ /*ist eigentlich Schrift p1, aber geht nicht in css*/
     font-size: var(--type-size-p1);
+    color: #FFF;
+    text-align: center;
+    font-family: Cormorant;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
-p{
+p{ /*ist Schrift p2 in Figma*/
     font-size: var(--type-size-p2);
 }
 
@@ -75,15 +94,15 @@ header {
 
 /*MEDIA QUERIES---> Bitte möglichst unten lassen, so überschreiben wir sie nicht ausversehen!*/
 
-@media (min-width: 480px) and (max-width: 768px) {
+/*@media (min-width: 480px) and (max-width: 768px) {
     body {
-        /* Hochkant Tablet */
+        /* Hochkant Tablet 
         background-position: 44% -30px;   
         background-size: 115%;            
         background-repeat: no-repeat;
         background-image: url(img/hogwarts.jpeg);
     }
-}
+}*/
 
 @media (max-width: 768px) {
     :root {
