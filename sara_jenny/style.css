@@ -68,15 +68,13 @@ p{ /*ist Schrift p2 in Figma*/
     --color-text: #ffffff; 
 }
 
-/*Button_default_desktop Styling*/
-.button_default_gross {
 /*Button_default_desktop Styling, also der API-Button, bevor geklickt wurde*/
 #APIButton {
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='473' height='96' viewBox='0 0 473 96' fill='none'><path d='M87 0L0 48.5L87 95.5H384.5L473 48.5L384.5 0H87Z' fill='%23634832'/></svg>");
     background-repeat: no-repeat;
     background-size: contain;      
     background-size: contain;
-    background-position: center center;
+    background-position: center;
     width: 473px;
     height: 95.5px;
     flex-shrink: 0;
@@ -99,9 +97,9 @@ body {
 
 header {
     position: relative;
-  }
+}
 
-.hat{
+.hat {
     height:100px;
     width: 90px;
     position: absolute;
@@ -145,9 +143,6 @@ header {
         min-height: 105vh;
         overflow: hidden;
     }
-
-
-
 }
 
 @media (max-width: 480px) {
@@ -173,9 +168,5 @@ header {
         min-height: 130vh;
         overflow: hidden;
     }     
-
-    
     }
-
-
 }
