@@ -47,7 +47,7 @@ h3{ /*ist eigentlich Schrift p1, aber geht nicht in css*/
 
 p{ /*ist Schrift p2 in Figma*/
     font-size: var(--type-size-p2);
-    color: #000;
+    color: #fff;
     text-align: center;
     font-family: 'Cormorant';
     font-style: normal;
@@ -70,14 +70,19 @@ p{ /*ist Schrift p2 in Figma*/
 
 /*Button_default_desktop Styling, also der API-Button, bevor geklickt wurde*/
 #APIButton {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='473' height='96' viewBox='0 0 473 96' fill='none'><path d='M87 0L0 48.5L87 95.5H384.5L473 48.5L384.5 0H87Z' fill='%23634832'/></svg>");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='473' height='96' viewBox='0 0 473 96'><path d='M87 0L0 48.5L87 95.5H384.5L473 48.5L384.5 0H87Z' fill='%23634832'/></svg>");
     background-repeat: no-repeat;
     background-size: contain;      
-    background-position: center, center;
+    background-position: center;
     width: 473px;
     height: 95.5px;
     flex-shrink: 0;
 }
+
+/*Karte im Hintergrund
 
 /*Backgorund Hogwarts*/
 body {
