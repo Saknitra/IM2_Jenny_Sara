@@ -17,6 +17,7 @@ h1{
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #634832;
     font-family: "Henny Penny";
+    font-family: 'Henny Penny';
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -26,6 +27,8 @@ h2{
     font-size: var(--type-size-h2);
     color: #FFF;
     font-family: "Henny Penny";
+    text-align: center;
+    font-family: 'Henny Penny';
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -36,6 +39,7 @@ h3{ /*ist eigentlich Schrift p1, aber geht nicht in css*/
     color: #FFF;
     text-align: center;
     font-family: Cormorant;
+    font-family: 'Cormorant';
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -43,6 +47,12 @@ h3{ /*ist eigentlich Schrift p1, aber geht nicht in css*/
 
 p{ /*ist Schrift p2 in Figma*/
     font-size: var(--type-size-p2);
+    color: #000;
+    text-align: center;
+    font-family: 'Cormorant';
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 /*colors, die wir haben/brauchen*/
@@ -60,6 +70,9 @@ p{ /*ist Schrift p2 in Figma*/
 
 /*Button_default_desktop Styling*/
 .button_default_gross {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='473' height='96' viewBox='0 0 473 96' fill='none'><path d='M87 0L0 48.5L87 95.5H384.5L473 48.5L384.5 0H87Z' fill='%23634832'/></svg>");
+    background-repeat: no-repeat;
+    background-size: contain;      
     width: 473px;
     height: 95.5px;
     flex-shrink: 0;
