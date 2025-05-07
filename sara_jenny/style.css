@@ -68,7 +68,7 @@ p{ /*ist Schrift p2 in Figma*/
     --color-text: #ffffff; 
 }
 
-/*Button_default_desktop Styling, also der API-Button, bevor geklickt wurde*/
+/*Button default für desktop Styling, also der API-Button, bevor geklickt wurde*/
 #APIButton {
     display: flex;
     justify-content: center;
@@ -77,12 +77,17 @@ p{ /*ist Schrift p2 in Figma*/
     background-repeat: no-repeat;
     background-size: contain;      
     background-position: center;
+    background-color: transparent;
+    border: none;
     width: 473px;
     height: 95.5px;
     flex-shrink: 0;
 }
 
-/*Karte im Hintergrund*/
+/*Button default für mobile Styling*/
+
+
+/*Karte im Hintergrund für Spells*/
 .cardForSpells {
     background-image: url(img/card.jpg);
     width: 664px;
@@ -111,7 +116,8 @@ header {
 
     /*Fade in Header*/
     opacity: 0;
-    transition: opacity 1.2s ease-in;
+    transition-property: opacity;
+    transition-duration: 1.2s;
 }
 
 header.fade {
@@ -129,12 +135,16 @@ header.fade {
 /*Fade in Text/Button*/
 .container {
     opacity: 0;
-    transition: opacity 1.2s ease-in;
+    transition-property: opacity;
+    transition-duration: 1.2s;
 
 }
 
 .container.fade {
     opacity: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
