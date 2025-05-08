@@ -19,7 +19,7 @@ const myData = await fetchData(API_URL);
 console.log(myData[0].description);
 
 function showData() {
-    myData.forEach(element => {
+    mySpellData.forEach(element => {
         let card = document.createElement("article"); //createElement tut ein Element dem DOM hinzufügen//
         card.classList.add("card");
         card.innerHTML = `
@@ -33,7 +33,8 @@ function showData() {
 showData ();
 */
 
-
+const buttonContainer = document.querySelector("#ButtonContainer");
+buttonContainer.innerHTML = "";
 
 //Startseite Fadein Header und Container (Article)//
 window.addEventListener("DOMContentLoaded", function () {
@@ -55,22 +56,52 @@ async function fetchData(URL) {
 }
 
 //API anzeigen//
+function showAPI () {
+    let APIButton = document.createElement("button");
+    APIButton.id = "APIButton";
+    APIButton.classList.add("button");
 
-document.getElementById("APIButton").addEventListener("click", async () => {
-    const SpellData = await fetchData(API_URL);
+    let buttonText = document.createElement("span");
+    buttonText.innerText = "Get a random spell!";   
+    buttonText.classList.add("TextInButton");
+    APIButton.appendChild(buttonText);
 
-    const spellOutput = document.getElementById("spellOutput");
 
-    if (data.name && data.description) {
-        spellOutput.innerHTML = `
-            <h2>"Name:"</h2>
-            <h3>${data.name}</h3>
-            <h2>"Description:"</h2>
-            <h3>${data.description}</h3>
-            ` ;
-    } else {
-        spellOutput.innerText = "No data available";
-    }
-    console.log(SpellData);
-});
+    buttonContainer.appendChild(APIButton);
+    APIButton.addEventListener("click", async () => {
+        
+        const TextAusblenden = document.getElementById("TextAnfangFull");
+        TextAusblenden.style.display = "none";
+        
+        const SpellData = await fetchData(API_URL);
+        let count = SpellData.length;
+        let randomIndex = Math.floor(Math.random() * count);
+
+        const spellOutput = document.getElementById("spellOutput");
+
+        if (SpellData[randomIndex].name && SpellData[randomIndex].description) {
+            spellOutput.innerHTML = `
+                <h2>Your randomly chosen spell:</h2>
+                <div id = cardForSpells>
+                    <div id = TextinCard>
+                        <div id ="SpellName">
+                            <h2 class = "Black">Name:</h2>
+                            <h3 class = "Black">${SpellData[randomIndex].name}</h3>
+                        </div>
+                        <div id ="SpellDescription">
+                            <h2 class = "Black">Description:</h2>
+                            <h3 class = "Black">${SpellData[randomIndex].description}</h3>
+                        </div>
+                    </div>    
+                </div>
+                ` ;
+        } else {
+            spellOutput.innerText = "No data available";
+        }
+        console.log(SpellData);
+    });
+}
+
+showAPI ();
+
     

@@ -25,16 +25,20 @@
     <main>
         <article class ="container">
             <h1>Wizard's Roulette</h1>
-            <h2>spells from the Harry Potter world</h2>
+            <div id="TextAnfangFull">
+                <h2 class="Subtitle">spells from the Harry Potter world</h2>
 
-            <div class="TextIntroFull"><p>Step into the wizarding world with the Random Spell Generator! With a flick of your wand (or click of a button), summon a spell from the magical archives of Hogwarts.</p> 
-            <p>From charming Lumos to chaotic Expelliarmus, you never know what incantation will appear next.</p>
-            <p>Perfect for dueling practice, wizard roleplay, or just adding a touch of mystery to your day.</p></div>
-            <button id="APIButton" class="button"><div class = "TextInButton">Generate Random Spell</div> </button>
+                <div class="TextIntroFull"><p>Step into the wizarding world with the Random Spell Generator! With a flick of your wand (or click of a button), summon a spell from the magical archives of Hogwarts.</p> 
+                <p>From charming Lumos to chaotic Expelliarmus, you never know what incantation will appear next.</p>
+                <p>Perfect for dueling practice, wizard roleplay, or just adding a touch of mystery to your day.</p></div>
+            </div>
             <div id="spellOutput"></div>
+            <div id = "ButtonContainer">
+                <button id="APIButton" class="button"><div class = "TextInButton">Generate Random Spell</div> </button>
+            </div>
         </article>
     </main>
 
-    <script src="script.js"></script>  
+    <script src="script.js" type="module"></script>  
 </body>
 </html>

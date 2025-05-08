@@ -28,14 +28,22 @@ h2{
     color: #FFF;
     text-align: center;
     margin-top: 0;
-    margin-bottom: 55px;
+    margin-bottom: 0;
     font-family: 'Henny Penny';
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-h3{ /*ist eigentlich Schrift p1, aber geht nicht in css*/
+h2.Subtitle {
+    margin-bottom: 55px;
+}
+
+h2.Black {
+    color: black;
+}
+
+h3{ /*ist Schrift p1 in Figma, aber p mit Nummern geht nicht in css*/
     font-size: var(--type-size-p1);
     color: #FFF;
     text-align: center;
@@ -43,6 +51,12 @@ h3{ /*ist eigentlich Schrift p1, aber geht nicht in css*/
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin: 0;
+    padding: 0;
+}
+
+h3.Black {
+    color: black;
 }
 
 p{ /*ist Schrift p2 in Figma*/
@@ -101,15 +115,25 @@ p{ /*ist Schrift p2 in Figma*/
     line-height: normal;
 }
 
+#TextinCard {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+
 /*Karte im Hintergrund für Spells, für Desktopgrösse*/
 #cardForSpells {
-    background-image: url(img/card.png);
-    background-color: transparent;
-    background-size: contain;
+    /*background-image: url(img/card.png);*/
+
+    background-color: red;
+    background-size: cover;
     width: 664px;
-    height: 436px;
     flex-shrink: 0;
-    aspect-ratio: 166/109;
+    margin-bottom: 30px;
+    border-radius: 25px;
 }
 
 /*Backgorund Hogwarts*/
@@ -242,7 +266,18 @@ main {
     align-items: center;
 }
 
+/*Styling von Text divs der Spells*/
+/*Styling des divs des Namens*/
 
+#SpellName {
+    padding-bottom: 40px;
+}
+
+/*Styling des divs der Description*/
+
+#SpellDescription {
+    padding-bottom: 40px;
+}
 
 /*MEDIA QUERIES---> Bitte möglichst unten lassen, so überschreiben wir sie nicht ausversehen!*/
 
