@@ -15,6 +15,7 @@ h1{
     color: #E4D2C0;
     text-align: center;
     margin-bottom: 0;
+    margin-top: 0;
     -webkit-text-stroke-width: 1.5px;
     -webkit-text-stroke-color: #634832;
     font-family: 'Henny Penny';
@@ -120,7 +121,8 @@ p{ /*ist Schrift p2 in Figma*/
     justify-content: center;
     display: flex;
     flex-direction: column;
-    margin: 5px;
+    margin-right: 100px;
+    margin-left: 100px;
 }
 
 
@@ -128,23 +130,26 @@ p{ /*ist Schrift p2 in Figma*/
 #cardForSpells {
     /*background-image: url(img/card.png);*/
 
-    background-color: red;
+    background-image: url(img/Pergament_Hintergrund.jpeg);
     background-size: cover;
     width: 664px;
     flex-shrink: 0;
+    margin-top: 30px;
     margin-bottom: 30px;
     border-radius: 25px;
+    padding-top: 40px;
 }
 
-/*Backgorund Hogwarts*/
-body {
-    background-image: url(img/hogwarts_02.jpeg);
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    margin: 0;    
+/*Zauberstäbe styling*/
+#wandOne {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 216.811px;
+    height: 216.811px;
+    transform: rotate(131.186deg);
+    flex-shrink: 0;
+    aspect-ratio: 216.81/216.81;
 }
 
 /*HEADER STYLING*/
@@ -239,9 +244,19 @@ header.fade {
    
 }
 
+/*Backgorund Hogwarts*/
+body {
+    background-image: url(img/hogwarts_02.jpeg);
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin: 0;    
+}
 
 main {
-    padding: 100px 23px;
+    padding: 10px 23px;
     padding-bottom: 50px auto; 
     display: flex;
     flex-direction: row;
@@ -275,7 +290,7 @@ main {
 
 /*Styling des divs der Description*/
 
-#SpellDescription {
+/*#SpellDescription {
     padding-bottom: 40px;
 }
 

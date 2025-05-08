@@ -62,7 +62,7 @@ function showAPI () {
     APIButton.classList.add("button");
 
     let buttonText = document.createElement("span");
-    buttonText.innerText = "Get a random spell!";   
+    buttonText.innerText = "Generate Random Spell";   
     buttonText.classList.add("TextInButton");
     APIButton.appendChild(buttonText);
 
@@ -71,6 +71,8 @@ function showAPI () {
         
         const TextAusblenden = document.getElementById("TextAnfangFull");
         TextAusblenden.style.display = "none";
+
+        buttonText.innerText = "Generate Another Spell!";
         
         const SpellData = await fetchData(API_URL);
         let count = SpellData.length;
@@ -91,7 +93,10 @@ function showAPI () {
                             <h2 class = "Black">Description:</h2>
                             <h3 class = "Black">${SpellData[randomIndex].description}</h3>
                         </div>
-                    </div>    
+                    </div>
+                    <div id = WandsInCard>
+                        <img id = "wandOne" src="img/Wand1.png" alt="Magic Wand">
+                    </div>
                 </div>
                 ` ;
         } else {
