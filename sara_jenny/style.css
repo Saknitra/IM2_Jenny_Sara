@@ -59,7 +59,7 @@ p{ /*ist Schrift p2 in Figma*/
 }
 
 .TextIntroFull {
-    margin-bottom: 100px;
+    margin-bottom: 80px;
 }
 
 /*colors, die wir haben/brauchen*/
@@ -114,16 +114,13 @@ p{ /*ist Schrift p2 in Figma*/
 
 /*Backgorund Hogwarts*/
 body {
-    background-image: url(img/hogwarts.jpeg);
+    background-image: url(img/hogwarts_02.jpeg);
+    height: 100%;
+    background-position: center;
     background-size: cover;
-    background-position: 58% top;
-    background-position-y: -10px;
     background-repeat: no-repeat;
     min-height: 100vh;
-    overflow: normal;
-    margin: 0;
-    padding-bottom: 50px; 
-    
+    margin: 0;    
 }
 
 /*HEADER STYLING*/
@@ -153,6 +150,7 @@ header.fade {
 
 main {
     padding: 100px 23px;
+    padding-bottom: 50px auto; 
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -208,9 +206,8 @@ main {
     }
 
     body {
-        background-image: url(img/hogwarts.jpeg);
-        background-position: center top;
-        background-position-y: -10px; 
+        background-image: url(img/hogwarts_02.jpeg);
+        background-position: center;
         background-size: cover;               
         background-repeat: no-repeat;
         min-height: 105vh;
@@ -255,8 +252,9 @@ main {
     }
 
     body {
-        background-image: url(img/hogwarts.jpeg);
-        background-position: 50% -30px;   
+        background-image: url(img/hogwarts_02.jpeg);
+        background-position: -580px;
+        background-size: cover;  
         background-repeat: no-repeat;
         min-height: 130vh;
         overflow: normal;
