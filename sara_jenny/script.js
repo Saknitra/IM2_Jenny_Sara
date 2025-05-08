@@ -41,4 +41,36 @@ window.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".container").classList.add("fade");   
 });
 
+//API Abrufen//
+const API_URL =  'https://hp-api.onrender.com/api/spells';
 
+async function fetchData(URL) {
+    try {
+        const response = await fetch(URL);
+        return await response.json();
+    } catch (e) {
+        console.error(e);
+        return [];
+    }
+}
+
+//API anzeigen//
+
+document.getElementById("APIButton").addEventListener("click", async () => {
+    const SpellData = await fetchData(API_URL);
+
+    const spellOutput = document.getElementById("spellOutput");
+
+    if (data.name && data.description) {
+        spellOutput.innerHTML = `
+            <h2>"Name:"</h2>
+            <h3>${data.name}</h3>
+            <h2>"Description:"</h2>
+            <h3>${data.description}</h3>
+            ` ;
+    } else {
+        spellOutput.innerText = "No data available";
+    }
+    console.log(SpellData);
+});
+    
