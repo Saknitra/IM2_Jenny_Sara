@@ -66,8 +66,6 @@ function showAPI () {
     buttonText.classList.add("TextInButton");
     APIButton.appendChild(buttonText);
 
-
-<<<<<<< Updated upstream
     buttonContainer.appendChild(APIButton);
     APIButton.addEventListener("click", async () => {
         
@@ -106,7 +104,6 @@ function showAPI () {
 showAPI ();
 
             
-=======
     if (data.name && data.description) {
         spellOutput.innerHTML = `
             <h2>"Name:"</h2>
@@ -118,10 +115,8 @@ showAPI ();
         spellOutput.innerText = "No data available";
     }
     console.log(SpellData);
-});
-    
+
 //Animation für die Speech Bubble//
 
 const hat = document.querySelector(".hat");
 const speechBubble = document.querySelector(".speech-bubble");
->>>>>>> Stashed changes
