@@ -103,19 +103,6 @@ function showAPI () {
 
 showAPI ();
 
-            
-    if (data.name && data.description) {
-        spellOutput.innerHTML = `
-            <h2>"Name:"</h2>
-            <h3>${data.name}</h3>
-            <h2>"Description:"</h2>
-            <h3>${data.description}</h3>
-            ` ;
-    } else {
-        spellOutput.innerText = "No data available";
-    }
-    console.log(SpellData);
-
 //Animation für die Speech Bubble//
 
 const hat = document.querySelector(".hat");
