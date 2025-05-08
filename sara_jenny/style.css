@@ -140,27 +140,54 @@ header.fade {
     opacity: 1;
 }
 
+.hat-img {
+    height:100px;
+    width: 90px;
+    position: relative;
+    z-index: 10;
+}
+
 /*Animation Hat*/
 .hat-animation {
     position: absolute;
     right: 100px;
     top: 10px;
     z-index: 10;
+    animation: hatAnimation 5s cubic-bezier(0.42, 1.2, 0.58, 1) forwards;
 }
 
+@keyframes hatAnimation {
+    0% {
+        transform: translateX(0) rotate(0deg);
+    }
 
-.hat {
-    height:100px;
-    width: 90px;
-    position: relative;
+    30% {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateX(0) rotate(180deg);
+    }
+
+    50% {
+        transform: translateX(0) rotate(180deg);
+    }
+
+    70% {
+        transform: translateX(0) rotate(0deg);
+    }
+    
+    100% {
+        transform: translateX(-70px) rotate(0deg);
+    }
 }
 
 /*Pseudoelement Sprechblase für Animation Hut*/
 .speech-bubble {
     position: absolute;
-    top: 0;
+    top: -120%;
     left: 50%;
-    transform: translate(-50%, -120%);
+    transform: translateX(-50%);
     background: #fff;
     border: 2px solid var(--color-primary);
     border-radius: 12px;
@@ -169,7 +196,7 @@ header.fade {
     font-size: 18px;
     color: #000;
     opacity: 1;
-    pointer-events: auto;
+    pointer-events: none;
     transition: opacity 0.4s ease;
      z-index: 2;
 }
@@ -185,7 +212,9 @@ header.fade {
     border-color: #fff transparent transparent transparent;
 }
 
-
+.hat:hover .speech-bubble {
+    opacity: 1;
+}
 
 main {
     padding: 100px 23px;
