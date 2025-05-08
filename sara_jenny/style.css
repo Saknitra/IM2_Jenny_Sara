@@ -28,6 +28,7 @@ h2{
     color: #FFF;
     text-align: center;
     margin-top: 0;
+    margin-bottom: 55px;
     font-family: 'Henny Penny';
     font-style: normal;
     font-weight: 400;
@@ -100,7 +101,7 @@ p{ /*ist Schrift p2 in Figma*/
     line-height: normal;
 }
 
-/*Karte im Hintergrund für Spells, für Desktopgrösse und Tabletgrösse*/
+/*Karte im Hintergrund für Spells, für Desktopgrösse*/
 #cardForSpells {
     background-image: url(img/card.png);
     background-color: transparent;
@@ -116,11 +117,12 @@ body {
     background-image: url(img/hogwarts.jpeg);
     background-size: cover;
     background-position: 58% top;
+    background-position-y: -10px;
     background-repeat: no-repeat;
     min-height: 100vh;
     overflow: normal;
     margin: 0;
-    padding: 0; 
+    padding-bottom: 50px; 
     
 }
 
@@ -150,8 +152,9 @@ header.fade {
 }
 
 main {
-    padding-top: 100px;
+    padding: 100px 23px;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
@@ -161,6 +164,8 @@ main {
     opacity: 0;
     transition-property: opacity;
     transition-duration: 1.2s;
+    max-width: 800px;
+    width: 100%;
 
 }
 
@@ -185,6 +190,7 @@ main {
     }
 }*/
 
+/*Tablet (auch hier oben angegeben, weil ich doofi das sonst nict checke*/
 @media (max-width: 768px) {
     :root {
         /*Tablet*/
@@ -203,14 +209,35 @@ main {
 
     body {
         background-image: url(img/hogwarts.jpeg);
-        background-position: center -30px;     
+        background-position: center top;
+        background-position-y: -10px; 
         background-size: cover;               
         background-repeat: no-repeat;
         min-height: 105vh;
         overflow: normal;
     }
+
+    main {
+        padding-top: 90px;
+        padding-left: 23px;
+        padding-right: 23px;
+        padding-bottom: 50px;
+    }
+
+    h2 {
+        margin-bottom: 15px;
+    }
+
+    p {
+        padding: 15px;
+    }
+
+    .TextIntroFull {
+        margin-bottom: 30px;
+    }
 }
 
+/*Mobile! (für micht Blödi)*/
 @media (max-width: 480px) {
     :root {
         /* Mobile */
@@ -236,15 +263,28 @@ main {
     } 
 
     main {
-        padding-top: 202px;
+        padding-top: 120px;
         padding-left: 23px;
         padding-right: 23px;
-        padding-bottom: 600px;
+        padding-bottom: 20px;
+    }
+
+    h2 {
+        margin-bottom: 15px;
+    }
+
+    p {
+        padding: 15px;
+    }
+
+    .TextIntroFull {
+        margin-bottom: 30px;
     }
     
     /*Button default für mobile Styling*/
     #APIButton {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='473' height='96' viewBox='0 0 473 96'><path d='M87 0L0 48.5L87 95.5H384.5L473 48.5L384.5 0H87Z' fill='%23634832'/></svg>");
