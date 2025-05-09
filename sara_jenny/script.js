@@ -38,8 +38,8 @@ buttonContainer.innerHTML = "";
 
 //Startseite Fadein Header und Container (Article)//
 window.addEventListener("DOMContentLoaded", function () {
-    document.querySelector("header").classList.add("fade");
-    document.querySelector(".container").classList.add("fade");   
+        document.querySelector("header").classList.add("fade");
+        document.querySelector(".container").classList.add("fade");   
 });
 
 //API Abrufen//
@@ -108,7 +108,54 @@ function showAPI () {
 
 showAPI ();
 
-//Animation für die Speech Bubble//
+document.addEventListener("DOMContentLoaded", () => {
+    const hat = document.querySelector(".hat");
+    const speechBubble = document.querySelector(".speech-bubble");
 
-const hat = document.querySelector(".hat");
-const speechBubble = document.querySelector(".speech-bubble");
+    // Flag to check if the animation is running
+    let isAnimating = false;
+
+    // Function to start the animation and show the speech bubble
+    function animateWithSpeechBubble() {
+        // If the animation is already running, do nothing
+        if (isAnimating) return;
+
+        // Mark animation as running
+        isAnimating = true;
+
+        // Ensure the speech bubble is hidden at the start
+        speechBubble.style.opacity = "0";
+
+        // Remove any conflicting classes
+        hat.classList.remove("hatReset", "hatAnimation");
+        void hat.offsetWidth;  // Trigger reflow to reset the styles
+
+        // Add the animation class to the hat
+        hat.classList.add("hatAnimation");
+
+        // Show the speech bubble after halfway (3 seconds)
+        setTimeout(() => {
+            speechBubble.style.opacity = "1";  // Make speech bubble visible
+        }, 3000);
+
+        // After the full animation duration (6 seconds), reset the hat position
+        setTimeout(() => {
+            // Reset the hat position and hide the speech bubble
+            hat.classList.remove("hatAnimation");
+            hat.style.transform = "translateX(-70px) rotate(0deg)";  // Reset position
+            speechBubble.style.opacity = "0";  // Hide the speech bubble
+
+            // Add a reset class to indicate it's ready for the next hover
+            hat.classList.add("hatReset");
+
+            // Mark animation as complete and allow the next animation
+            isAnimating = false;
+        }, 6000);  // Reset after 6 seconds (the duration of the animation)
+    }
+    // Trigger animation when hovering over the hat
+    hat.addEventListener("mouseenter", animateWithSpeechBubble);
+
+});
+
+
+    
