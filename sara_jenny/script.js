@@ -1,38 +1,3 @@
-console.log("hi Javascript!")
-
-/*API Abrufen
-const container = document.querySelector("#spell-container");
-
-const API_URL = 'https://hp-api.onrender.com/api/spells';
-
-async function fetchData(URL) {
-    try {
-        const response = await fetch(URL);
-        return await response.json();
-    } catch (e) {
-        console.error(e);
-        return [];
-    }
-}
-
-const myData = await fetchData(API_URL);
-console.log(myData[0].description);
-
-function showData() {
-    mySpellData.forEach(element => {
-        let card = document.createElement("article"); //createElement tut ein Element dem DOM hinzufügen//
-        card.classList.add("card");
-        card.innerHTML = `
-        <h2>${element.name}</h2>
-        <p>${element.description}</p>
-        `;
-        container.appendChild(card); //mit appendChild nimmt man den Article und zeigt ihn auf der Website an//
-    });
-}
-
-showData ();
-*/
-
 const buttonContainer = document.querySelector("#ButtonContainer");
 buttonContainer.innerHTML = "";
 
@@ -55,6 +20,7 @@ async function fetchData(URL) {
     }
 }
 
+// Array mit allen Zauberstäben //
 const allWands = [
     'img/wand1.png',
     'img/wand2.png',
@@ -68,9 +34,9 @@ const allWands = [
     'img/wand10.png',
 ]
 
-let lastWand = null;
+let lastWand = null; // Speichert den zuletzt verwendeten Zauberstab //
 
-// Funktion zum Generieren einer zufälligen Zauberstabs
+// Funktion zur Auswahl eines zufälligen Zauberstabs //
 function getRandomWand() {
    const availableWands = allWands.filter(wand => wand !== lastWand);
     const newWand = availableWands[Math.floor(Math.random() * availableWands.length)];
@@ -132,23 +98,20 @@ function showAPI () {
 
 showAPI ();
 
+// Animation für den Hut und die Sprechblase //
 document.addEventListener("DOMContentLoaded", () => {
     const hat = document.querySelector(".hat");
     const speechBubble = document.querySelector(".speech-bubble");
 
-    // Flag to check if the animation is running
-    let isAnimating = false;
-
-    // Function to start the animation and show the speech bubble
     function animateWithSpeechBubble() {
 
-        // Remove any conflicting classes
+        // Löscht die Classen für die Animation, um sie neu zu starten //
         hat.classList.remove("hatAnimation");
-          void hat.offsetWidth;  // Force reflow
+          void hat.offsetWidth; 
         hat.classList.add("hatAnimation");
        
         speechBubble.classList.remove("animate-bubble");
-        void speechBubble.offsetWidth; // Force reflow
+        void speechBubble.offsetWidth;
         speechBubble.classList.add("animate-bubble");
 
 
@@ -156,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
             hat.classList.add("hatAnimation");
         }, 100);
     }
-    // Trigger animation when hovering over the hat
+    // Triggert die Animation, beim hovern//
     hat.addEventListener("mouseenter", animateWithSpeechBubble);
 
 });
