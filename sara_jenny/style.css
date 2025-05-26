@@ -280,12 +280,12 @@ header.fade {
 /*Backgorund Hogwarts*/
 body {
     background-image: url(img/hogwarts_02.jpeg);
-    height: 100%;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 100vh;
-    margin: 0;    
+    background-attachment: fixed;  /* Lock background to viewport */
+    min-height: 100vh;             /* Ensure full viewport height */
+    margin: 0;
 }
 
 main {

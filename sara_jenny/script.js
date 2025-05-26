@@ -55,6 +55,29 @@ async function fetchData(URL) {
     }
 }
 
+const allWands = [
+    'img/wand1.png',
+    'img/wand2.png',
+    'img/wand3.png',
+    'img/wand4.png',
+    'img/wand5.png',
+    'img/wand6.png',
+    'img/wand7.png',
+    'img/wand8.png',
+    'img/wand9.png',
+    'img/wand10.png',
+]
+
+let lastWand = null;
+
+// Funktion zum Generieren einer zufälligen Zauberstabs
+function getRandomWand() {
+   const availableWands = allWands.filter(wand => wand !== lastWand);
+    const newWand = availableWands[Math.floor(Math.random() * availableWands.length)];
+  lastWand = newWand;
+  return newWand;
+}
+
 //API anzeigen//
 function showAPI () {
     let APIButton = document.createElement("button");
@@ -95,14 +118,15 @@ function showAPI () {
                         </div>
                     </div>
                     <div id = WandsInCard>
-                        <img id = "wandOne" src="img/wand1.png" alt="Magic Wand">
+                        <img id = "wandOne" src="${getRandomWand()}" alt="Magic Wand">
                     </div>
                 </div>
                 ` ;
         } else {
             spellOutput.innerText = "No data available";
         }
-        console.log(SpellData);
+
+            console.log(SpellData);
     });
 }
 
