@@ -78,7 +78,7 @@ function getRandomWand() {
   return newWand;
 }
 
-//API anzeigen//
+//API anzeigen
 function showAPI () {
     let APIButton = document.createElement("button");
     APIButton.id = "APIButton";
@@ -90,24 +90,65 @@ function showAPI () {
     APIButton.appendChild(buttonText);
 
     buttonContainer.appendChild(APIButton);
+
     APIButton.addEventListener("click", async () => {
         
         const TextAusblenden = document.getElementById("TextAnfangFull");
-        TextAusblenden.style.display = "none";
+        if (TextAusblenden) TextAusblenden.style.display = "none";
 
         buttonText.innerText = "Generate Another Spell!";
         
         const SpellData = await fetchData(API_URL);
         let count = SpellData.length;
         let randomIndex = Math.floor(Math.random() * count);
+        const spell= SpellData[randomIndex];
 
-        const spellOutput = document.getElementById("spellOutput");
+        const textContainer = document.getElementById("TextinCard");
+        const wandContainer = document.getElementById("WandsInCard");
+        
+        textContainer.classList.add("fade-out");
+        wandContainer.classList.add("fade-out");
 
-        if (SpellData[randomIndex].name && SpellData[randomIndex].description) {
-            spellOutput.innerHTML = `
+        setTimeout(() => {
+            textContainer.innerHTML=`
+                <div id ="SpellName">
+                    <h2 class = "Black">Name:</h2>
+                    <h3 class = "Black">${spell.name}</h3>
+                </div>
+                <div id ="SpellDescription">
+                    <h2 class = "Black">Description:</h2>
+                    <h3 class = "Black">${spell.description}</h3>
+                </div>
+
+            `;
+
+            wandContainer.innerHTML = `
+                <img id = "wandOne" src="${getRandomWand()}" alt="Magic Wand">
+            `;
+
+            textContainer.classList.remove("fade-out");
+            wandContainer.classList.remove("fade-out");
+
+            textContainer.classList.add("fade-in-zoom");
+            wandContainer.classList.add("fade-in-zoom");
+        }, 500);
+    });
+}
+
+
+
+        /*    setTimeout(() => {
+                insertNewSpell(spellOutput, spell);
+            }, 500); // Wartezeit für das Ausblenden der alten Karte
+        } else {
+            insertNewSpell(spellOutput, spell);
+        }
+
+        function insertNewSpell(container, spell) {
+            container.innerHTML = `
                 <h2>Your randomly chosen spell:</h2>
-                <div id = cardForSpells>
-                    <div id = TextinCard>
+                <div id = "cardForSpells" class="fade-in-start">
+                    <div id = "TextinCard">
                         <div id ="SpellName">
                             <h2 class = "Black">Name:</h2>
                             <h3 class = "Black">${SpellData[randomIndex].name}</h3>
@@ -122,15 +163,16 @@ function showAPI () {
                     </div>
                 </div>
                 ` ;
-        } else {
-            spellOutput.innerText = "No data available";
+                const newCard = document.getElementById("cardForSpells");
+                void newCard.offsetWidth; // Force reflow to trigger the fade-in animation
+                newCard.classList.remove("fade-in-start");
+                newCard.classList.add("fade-in-end");
+
         }
-
-            console.log(SpellData);
     });
-}
+}*/
 
-showAPI ();
+showAPI();
 
 document.addEventListener("DOMContentLoaded", () => {
     const hat = document.querySelector(".hat");
