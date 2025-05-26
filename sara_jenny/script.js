@@ -1,5 +1,5 @@
+//Button Abrufen//
 const buttonContainer = document.querySelector("#ButtonContainer");
-buttonContainer.innerHTML = "";
 
 //Startseite Fadein Header und Container (Article)//
 window.addEventListener("DOMContentLoaded", function () {
@@ -44,7 +44,81 @@ function getRandomWand() {
   return newWand;
 }
 
-//API anzeigen
+function showAPI() {
+    const APIButton = document.getElementById("APIButton");
+    const buttonText = APIButton.querySelector(".TextInButton");
+    let firstClick = true; // Variable, um den ersten Klick zu erkennen
+
+    APIButton.addEventListener("click", async () => {
+        const TextIntro = document.getElementById("TextAnfangFull");
+        const card = document.getElementById("cardForSpells");
+        const textContainer = document.getElementById("TextinCard");
+        const wandContainer = document.getElementById("WandsInCard");
+        const spellTitle = document.getElementById("SpellTitle");
+
+        if (firstClick) {
+            TextIntro.style.display = "none"; // Versteckt den Einführungstext beim ersten Klick
+            card.style.display = "flex"; // Zeigt die Karte an
+            spellTitle.style.display = "block"; // Zeigt den Titel der Karte an
+        }
+
+    buttonText.innerText = "Generate Another Spell!";
+
+    const SpellData = await fetchData(API_URL);
+    const randomIndex = Math.floor(Math.random() * SpellData.length);
+    const spell = SpellData[randomIndex];
+
+    if (!firstClick) {
+        textContainer.classList.add("fade-out");
+        wandContainer.classList.add("fade-out");
+
+        setTimeout(() => {
+            updateSpellContent(spell);
+        }, 500);
+    } else {
+        updateSpellContent(spell);
+        firstClick = false; // Setzt die Variable auf false nach dem ersten Klick
+    }
+});
+
+function updateSpellContent(spell) {
+    const textContainer = document.getElementById("TextinCard");
+    const wandContainer = document.getElementById("WandsInCard");
+
+    textContainer.innerHTML = `
+        <div id= "SpellName">
+            <h2 class="Black">Name:</h2>
+            <h3 class="Black">${spell.name}</h3>
+        </div>
+        <div id ="SpellDescription">
+            <h2 class="Black">Description:</h2>
+            <h3 class="Black">${spell.description}</h3>
+        </div>
+    `;
+
+    wandContainer.innerHTML = `
+        <img id="wandOne" src="${getRandomWand()}" alt="Magic Wand">
+    `;
+
+    textContainer.classList.remove("fade-out");
+    wandContainer.classList.remove("fade-out");
+
+    textContainer.classList.add("fade-in-zoom");
+    wandContainer.classList.add("fade-in-zoom");
+
+    setTimeout(() => {
+        textContainer.classList.remove("fade-in-zoom");
+        wandContainer.classList.remove("fade-in-zoom");
+    }, 500); // Entfernt die Animation nach 500ms
+}  
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+    showAPI();
+});
+
+
+/*//API anzeigen
 function showAPI () {
     let APIButton = document.createElement("button");
     APIButton.id = "APIButton";
@@ -99,7 +173,7 @@ function showAPI () {
             wandContainer.classList.add("fade-in-zoom");
         }, 500);
     });
-}
+}*/
 
 
 
@@ -137,8 +211,6 @@ function showAPI () {
         }
     });
 }*/
-
-showAPI();
 
 // Animation für den Hut und die Sprechblase //
 document.addEventListener("DOMContentLoaded", () => {
