@@ -1,13 +1,10 @@
-/* Object-Fit & Object-Position with Breakpoints */
-
-/* CSS-Variablen für Responsive Schriften */
-
+/* CSS-Variablen für responsive Schriften */
+/* Die Root-Elemete beziehen sich auf den Desktop-View */
 :root{
-        /* Desktop */
-        --type-size-p2: 24px;
-        --type-size-h2: 32px;
-        --type-size-p1: 32px;
-        --type-size-h1: 64px;
+    --type-size-p2: 24px;
+    --type-size-h2: 32px;
+    --type-size-p1: 32px;
+    --type-size-h1: 64px;
 }
 
 h1{
@@ -44,7 +41,7 @@ h2.Black {
     color: black;
 }
 
-h3{ /*ist Schrift p1 in Figma, aber p mit Nummern geht nicht in css*/
+h3{ /*Das ist die Schrift p1 in Figma, aber p mit Nummern funktioniert nicht im CSS*/
     font-size: var(--type-size-p1);
     color: #FFF;
     text-align: center;
@@ -60,7 +57,7 @@ h3.Black {
     color: black;
 }
 
-p{ /*ist Schrift p2 in Figma*/
+p{ /*Das ist die Schrift p2 in Figma*/
     font-size: var(--type-size-p2);
     color: #fff;
     margin: 0;
@@ -77,8 +74,8 @@ p{ /*ist Schrift p2 in Figma*/
     margin-bottom: 80px;
 }
 
-/*colors, die wir haben/brauchen*/
 
+/*Alle Farben, die wir benötigen*/
 :root{
     /*Dunkelbraun*/
     --color-primary: #634832;
@@ -90,7 +87,8 @@ p{ /*ist Schrift p2 in Figma*/
     --color-text: #ffffff; 
 }
 
-/*Button default für desktop Styling, also der API-Button, bevor geklickt wurde*/
+
+/*Button default für Desktop-Styling, also der API-Button, bevor dieser geklickt wurde*/
 #APIButton {
     display: flex;
     justify-content: center;
@@ -126,7 +124,7 @@ p{ /*ist Schrift p2 in Figma*/
 }
 
 
-/*Karte im Hintergrund für Spells, für Desktopgrösse*/
+/*Karte im Hintergrund für Spells, Desktopgrösse*/
 #cardForSpells {
     background-image: url(img/Pergament_Hintergrund.jpeg);
     background-size: cover;
@@ -137,6 +135,7 @@ p{ /*ist Schrift p2 in Figma*/
     border-radius: 25px;
     padding-top: 40px;
 }
+
 
 /*Zauberstäbe styling*/
 #wandOne {
@@ -154,8 +153,7 @@ p{ /*ist Schrift p2 in Figma*/
 }
 
 
-/*HEADER STYLING*/
-
+/*Styling unseres Headers*/
 header {
     position: relative;
     height: 160px;
@@ -176,8 +174,8 @@ header.fade {
     height:100px;
     width: 90px;
     z-index: 10;
-    /* animation: hatAnimation 5s ease forwards; */
 }
+
 
 /*Animation Hat*/
 .hat-animation {
@@ -185,7 +183,6 @@ header.fade {
     right: 100px;
     top: 10px;
     z-index: 10;
-    /* animation: hatAnimation 5s cubic-bezier(0.42, 1.2, 0.58, 1) forwards; */
 }
 
 @keyframes hatMove {
@@ -216,15 +213,12 @@ header.fade {
 
 }
 
-
-
 .hatAnimation {
     animation: hatMove 3s ease-in-out forwards, 
                hatReset 1s ease-in-out 5s forwards;
 }
 
-
- @keyframes hatReset {
+@keyframes hatReset {
     0% {
       transform: translateX(-70px) rotate(0deg);
     }
@@ -234,7 +228,7 @@ header.fade {
   }
 
 
-/*Pseudoelement Sprechblase für Animation Hut*/
+/*Unser Pseudoelement, die Sprechblase, für die Animation des Hutes + Animation*/
 .speech-bubble::after {
     content: "";
     position: absolute;
@@ -277,17 +271,20 @@ header.fade {
     animation: showThenHideSpeechBubble 6s ease-in-out forwards;
 }
 
-/*Backgorund Hogwarts*/
+
+/*Unser Hintergrund Bild: Hogwarts*/
 body {
     background-image: url(img/hogwarts_02.jpeg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;  /* Lock background to viewport */
-    min-height: 100vh;             /* Ensure full viewport height */
+    background-attachment: fixed;  
+    min-height: 100vh;             
     margin: 0;
 }
 
+
+/*Styling unseres Containers*/
 main {
     padding: 10px 23px;
     padding-bottom: 50px auto; 
@@ -297,6 +294,7 @@ main {
     align-items: center;
     padding-bottom: 30px;
 }
+
 
 .fade-out {
     opacity: 0;
@@ -314,7 +312,8 @@ main {
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/*Fade in Text/Button*/
+
+/*Fade-in von Text und Button*/
 .container {
     opacity: 0;
     transition-property: opacity;
@@ -331,39 +330,29 @@ main {
     align-items: center;
 }
 
-/*Styling von Text divs der Spells*/
-/*Styling des divs des Namens*/
 
+/*Styling des Divs des Namens*/
 #SpellName {
     padding-bottom: 40px;
 }
 
-/*Styling des divs der Description*/
 
-/*#SpellDescription {
-    padding-bottom: 40px;
-}
+/*------------------------------------------------------   ALLE MEDIA QUERIES   ------------------------------------------------------------------------------------------*/
 
-/*MEDIA QUERIES---> Bitte möglichst unten lassen, so überschreiben wir sie nicht ausversehen!*/
-
-/*@media (min-width: 480px) and (max-width: 768px) {
-    body {
-        /* Hochkant Tablet 
-        background-position: 44% -30px;   
-        background-size: 115%;            
-        background-repeat: no-repeat;
-        background-image: url(img/hogwarts.jpeg);
-    }
-}*/
-
-/*Tablet (auch hier oben angegeben, weil ich doofi das sonst nict checke*/
+/*Tablet*/
 @media (max-width: 768px) {
     :root {
-        /*Tablet*/
             --type-size-p2: 21px;
             --type-size-h2: 27px;
             --type-size-p1: 27px;
             --type-size-h1: 52px;
+    }
+
+
+    /*Styling + Animation des Hutes */
+     .hat {
+        height: 80px;
+        width: 72px;
     }
 
     .hat-animation {
@@ -371,11 +360,8 @@ main {
         top: 8px
     }
 
-    .hat {
-        height: 80px;
-        width: 72px;
-    }
 
+    /*Hintergrund: Hogwarts*/
     body {
         background-image: url(img/hogwarts_02.jpeg);
         background-position: center;
@@ -385,6 +371,8 @@ main {
         overflow: normal;
     }
 
+
+    /*Styling des Main Contents und Schriften*/
     main {
         padding-top: 20px;
         padding-left: 23px;
@@ -400,10 +388,14 @@ main {
         padding: 15px;
     }
 
+
+    /*Styling des Textes, der zu Beginn des Generators angezeigt wird*/
     .TextIntroFull {
         margin-bottom: 30px;
     }
 
+
+    /*Styling der Karte und des darin enthaltenen Textes*/
     #cardForSpells {
         max-width: 600px;
         width: 100%;
@@ -417,14 +409,20 @@ main {
 }
 
 
-/*Mobile! (für mich Blödi)*/
+/*Mobile*/
 @media (max-width: 480px) {
     :root {
-        /* Mobile */
         --type-size-p2: 18px;
         --type-size-h2: 22px;
         --type-size-p1: 22px;
         --type-size-h1: 40px;
+    }
+
+
+    /*Styling + Animation des Hutes */
+   .hat {
+        height: 60px;
+        width: 54px;
     }
 
     .hat-animation {
@@ -432,11 +430,8 @@ main {
         top: 6px;
     }
 
-    .hat {
-        height: 60px;
-        width: 54px;
-    }
 
+    /*Hintergrund: Hogwarts*/
     body {
         background-image: url(img/hogwarts_02.jpeg);
         background-position: -580px;
@@ -447,6 +442,8 @@ main {
         flex-direction: column;
     } 
 
+
+    /*Styling des Main Contents und Schriften*/
     main {
         padding-top: 0px;
         padding-left: 23px;
@@ -462,11 +459,14 @@ main {
         padding: 15px;
     }
 
+
+    /*Styling des Textes, der zu Beginn des Generators angezeigt wird*/
     .TextIntroFull {
         margin-bottom: 30px;
     }
     
-    /*Button default für mobile Styling*/
+
+    /*Button (default) für unser mobile Styling*/
     #APIButton {
         display: flex;
         flex-direction: column;
@@ -483,7 +483,8 @@ main {
         flex-shrink: 0;
     }
     
-    /*Karte im Hintergrund für Spells, Mobile Version*/
+
+    /*Karte + Text im Hintergrund für Spells, Mobile Styling*/
     #cardForSpells {
         background-image: url(img/Pergament_Hintergrund.jpeg);
         background-color: transparent;
@@ -498,6 +499,8 @@ main {
         margin-left: 50px;
     }
 
+
+    /*Styling des Zauberstabs*/
     #wandOne {
         max-width: 150px;
         max-height: 150px;
