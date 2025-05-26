@@ -128,8 +128,6 @@ p{ /*ist Schrift p2 in Figma*/
 
 /*Karte im Hintergrund für Spells, für Desktopgrösse*/
 #cardForSpells {
-    /*background-image: url(img/card.png);*/
-
     background-image: url(img/Pergament_Hintergrund.jpeg);
     background-size: cover;
     width: 664px;
@@ -387,7 +385,7 @@ main {
 }
 
 
-/*Mobile! (für micht Blödi)*/
+/*Mobile! (für mich Blödi)*/
 @media (max-width: 480px) {
     :root {
         /* Mobile */
@@ -414,10 +412,11 @@ main {
         background-repeat: no-repeat;
         min-height: 130vh;
         overflow: normal;
+        flex-direction: column;
     } 
 
     main {
-        padding-top: 120px;
+        padding-top: 0px;
         padding-left: 23px;
         padding-right: 23px;
         padding-bottom: 20px;
@@ -454,12 +453,9 @@ main {
     
     /*Karte im Hintergrund für Spells, Mobile Version*/
     #cardForSpells {
-        background-image: url(img/card.png);
+        background-image: url(img/Pergament_Hintergrund.jpeg);
         background-color: transparent;
-        background-size: contain;
         width: 418px;
-        height: 275px;
-        transform: rotate(90deg);
         flex-shrink: 0;
         aspect-ratio: 38/25;
     }
