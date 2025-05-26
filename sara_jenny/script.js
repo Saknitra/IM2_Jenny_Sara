@@ -95,7 +95,7 @@ function showAPI () {
                         </div>
                     </div>
                     <div id = WandsInCard>
-                        <img id = "wandOne" src="img/Wand1.png" alt="Magic Wand">
+                        <img id = "wandOne" src="img/wand1.png" alt="Magic Wand">
                     </div>
                 </div>
                 ` ;

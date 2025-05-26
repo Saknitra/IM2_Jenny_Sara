@@ -141,6 +141,7 @@ p{ /*ist Schrift p2 in Figma*/
 /*Zauberstäbe styling*/
 #wandOne {
     display: block;
+    object-fit: contain;
     margin-right: auto;
     margin-left: auto;
     max-width: 216.811px;
@@ -151,6 +152,7 @@ p{ /*ist Schrift p2 in Figma*/
     flex-shrink: 0;
     aspect-ratio: 216.81/216.81;
 }
+
 
 /*HEADER STYLING*/
 
