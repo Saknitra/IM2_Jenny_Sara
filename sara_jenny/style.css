@@ -160,6 +160,7 @@ header {
     position: relative;
     height: 160px;
     width: 100%;
+    contain: layout paint;;
 
     /*Fade in Header*/
     opacity: 0;
@@ -178,9 +179,6 @@ header.fade {
     z-index: 10;
 }
 
-header {
-    contain: layout paint;;
-}
 
 /*Animation Hat*/
 .hat-animation {
