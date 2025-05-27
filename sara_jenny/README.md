@@ -5,7 +5,7 @@ Stilvolle CSS-Animationen verbessern die Nutzererfahrung, während ein Hut als E
 Learnings und Schwierigkeiten: 
 
 Sara: 
-
+Für das Projekt brauchte ich vor allem JavaScript, da ich für den Teil zuständig war, der die API in die Website einbindet. Das war zuerst sehr einfach, da ich dem Code Along aus dem Unterricht folgte. Als dann die Animation von den Schriften innerhalb der Karte dazukam, wurde es komplizierter und ChatGPT wurde mein Retter in der Not. Zusammen haben wir es hingekriegt. Dabei fühlte ich mich, wie bei den Code Alongs: Es macht alles super Sinn und ich verstehe die Logik dahinter, aber das ohne Hilfe zu coden, wäre für mich immer noch schwer, bzw. wahrscheinlich unmöglich. Trotz dass ich das Programm mit Worten erklären kann. Allerdings hat es trotz allen Herausforderungen Spass gemacht, das zu programmieren.
 
 Jenny: 
 Durch das Projekt konnte ich mein JS-Wissen festigen und lernte Arrays, Funktionen sowie CSS-Animationen. Trotz Hürden in Form von Keyframes gelang mir mit Hilfe von ChatGPT und Nina eine charmante Animation umzusetzen.
