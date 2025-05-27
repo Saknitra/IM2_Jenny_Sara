@@ -76,6 +76,19 @@ function showAPI () {
         buttonText.innerText = "Generate Another Spell";
         
         const SpellData = await fetchData(API_URL);
+
+        //Fehlermeldung bei leerem SpellData-Array//
+        if (SpellData.length === 0) {
+            textContainer.innerHTML= `
+                <div id="SpellName">
+                <h2 class="Black">Error:</h2>
+                <h3 class="Black">Are you Neville Longbottom? 'Cause this isn't bloody working!</h3>
+                </div>
+            `;
+        wandContainer.innerHTML = "";
+            return;
+        } 
+
         const randomIndex = Math.floor(Math.random() * SpellData.length);
         const spell = SpellData[randomIndex];
 
