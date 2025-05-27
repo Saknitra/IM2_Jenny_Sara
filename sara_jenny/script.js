@@ -142,6 +142,7 @@ function setupHatAnimation() {
 
     if (hat && speechBubble) {
         hat.addEventListener("mouseenter", animateWithSpeechBubble);
-    }
+        hat.addEventListener("click", animateWithSpeechBubble);
+        hat.addEventListener("touchstart", animateWithSpeechBubble);
  }
-
+}
