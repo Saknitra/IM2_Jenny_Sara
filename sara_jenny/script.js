@@ -138,9 +138,10 @@ function setupHatAnimation() {
         speechBubble.classList.remove("animate-bubble");
         void speechBubble.offsetWidth; // Force reflow to restart animation
         speechBubble.classList.add("animate-bubble");
+    }
 
-        if (hat && speechBubble) {
-            hat.addEventListener("mouseenter", animateWithSpeechBubble);
-        }
-    }}
+    if (hat && speechBubble) {
+        hat.addEventListener("mouseenter", animateWithSpeechBubble);
+    }
+ }
 
