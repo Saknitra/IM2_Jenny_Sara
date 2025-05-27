@@ -47,9 +47,7 @@ function getRandomWand() {
   return newWand;
 }
 
-
-<<<<<<< Updated upstream
-    APIButton.addEventListener("click", async () => {
+        APIButton.addEventListener("click", async () => {
         const TextIntro = document.getElementById("TextAnfangFull");
         const card = document.getElementById("cardForSpells");
         const textContainer = document.getElementById("TextinCard");
@@ -111,67 +109,10 @@ function updateSpellContent(spell) {
         wandContainer.classList.remove("fade-in-zoom");
     }, 500); // Entfernt die Animation nach 500ms
 }  
-}
 
 window.addEventListener("DOMContentLoaded", () => {
     showAPI();
 });
-=======
-//API anzeigen//
-function showAPI () {
-    let APIButton = document.createElement("button");
-    APIButton.id = "APIButton";
-    APIButton.classList.add("button");
-
-    let buttonText = document.createElement("span");
-    buttonText.innerText = "Generate Random Spell";   
-    buttonText.classList.add("TextInButton");
-    APIButton.appendChild(buttonText);
-
-    buttonContainer.appendChild(APIButton);
-    APIButton.addEventListener("click", async () => {
-        
-        const TextAusblenden = document.getElementById("TextAnfangFull");
-        TextAusblenden.style.display = "none";
-
-        buttonText.innerText = "Generate Another Spell!";
-        
-        const SpellData = await fetchData(API_URL);
-        let count = SpellData.length;
-        let randomIndex = Math.floor(Math.random() * count);
-
-        const spellOutput = document.getElementById("spellOutput");
-
-        if (SpellData[randomIndex].name && SpellData[randomIndex].description) {
-            spellOutput.innerHTML = `
-                <h2>Your randomly chosen spell:</h2>
-                <div id = cardForSpells>
-                    <div id = TextinCard>
-                        <div id ="SpellName">
-                            <h2 class = "Black">Name:</h2>
-                            <h3 class = "Black">${SpellData[randomIndex].name}</h3>
-                        </div>
-                        <div id ="SpellDescription">
-                            <h2 class = "Black">Description:</h2>
-                            <h3 class = "Black">${SpellData[randomIndex].description}</h3>
-                        </div>
-                    </div>
-                    <div id = WandsInCard>
-                        <img id = "wandOne" src="${getRandomWand()}" alt="Magic Wand">
-                    </div>
-                </div>
-                ` ;
-        } else {
-            spellOutput.innerText = "No data available";
-        }
-
-            console.log(SpellData);
-    });
-}
-
-showAPI ();
-
->>>>>>> Stashed changes
 
 // Animation für den Hut und die Sprechblase //
 document.addEventListener("DOMContentLoaded", () => {
